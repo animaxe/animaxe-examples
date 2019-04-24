@@ -1,5 +1,4 @@
 package tutorial.webapp
-
 import core.Ctx2DRenderer.PlotterCmd2D
 import core.Model.Drawing
 import core._
@@ -7,6 +6,7 @@ import org.scalajs.dom
 import dom.{CanvasRenderingContext2D, document}
 import org.scalajs.dom.html.Canvas
 import org.scalajs.dom.raw.HTMLElement
+import core.LinearAlgebra._
 
 object TutorialApp {
 
@@ -20,6 +20,11 @@ object TutorialApp {
   }
 
   def main(args: Array[String]): Unit = {
+    //val v =  Vector[Int :: Int :: HNil, Int](HList((0, 1)))
+    val v1 =  Vec(0, 1)
+    val v2 =  Vec(0, 1)
+    //val v3 = v1 + v2
+
     appendPar(document.body, "Scala is cool")
     val ctx = appendCanvas(document.body)
     Ctx2DRenderer.animate(ctx, t => {

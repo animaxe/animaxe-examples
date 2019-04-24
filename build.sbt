@@ -10,6 +10,7 @@ scalaVersion := "2.12.8"
 
 libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "0.9.6",
+  "com.chuusai" %% "shapeless" % "2.3.3"
   //"com.lihaoyi" %%% "utest" % "0.4.5" % "test",
   //"com.github.japgolly.scalajs-react" %%% "core" % "1.4.1",
 )
