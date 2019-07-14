@@ -6,7 +6,7 @@ import org.scalajs.dom
 import dom.{CanvasRenderingContext2D, document}
 import org.scalajs.dom.html.Canvas
 import org.scalajs.dom.raw.HTMLElement
-import core.LinearAlgebra._
+import core.Vectors._
 
 object TutorialApp {
 
@@ -20,23 +20,18 @@ object TutorialApp {
   }
 
   def main(args: Array[String]): Unit = {
-    //val v =  Vector[Int :: Int :: HNil, Int](HList((0, 1)))
-    val v1 =  Vec(0, 1)
-    val v2 =  Vec(0, 1)
-    //val v3 = v1 + v2
-
     appendPar(document.body, "Scala is cool")
     val ctx = appendCanvas(document.body)
-    Ctx2DRenderer.animate(ctx, t => {
-      rect(0, 0, 300, 300, "black") ++
-        face(Math.sin(t) * 150 + 150)
-    })
+    Ctx2DRenderer.animate(ctx, t => 
+      rect(0, 0, 300, 300, "black")
+      ++ face(Math.sin(t) * 150 + 150)
+    )
   }
 
   // TODO difficulty type safetying it
-  def orth3(i: (Double, Double),
-            j: (Double, Double),
-            k: (Double, Double),
+  def orth3(i: Vec2,
+            j: Vec2,
+            k: Vec2,
             vec: (Double, Double, Double)): (Double, Double) =
     (vec._1 * i._1 + vec._2 * j._1 + vec._3 * k._1,
       vec._1 * i._2 + vec._2 * j._2 + vec._3 * k._2)
